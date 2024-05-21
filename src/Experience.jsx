@@ -1,5 +1,5 @@
 import { useRef } from "react"
-import {Text, Html, OrbitControls , TransformControls, PivotControls} from "@react-three/drei"
+import {MeshReflectorMaterial,Float,Text, Html, OrbitControls , TransformControls, PivotControls} from "@react-three/drei"
 
 export default function Experience()
 {
@@ -50,20 +50,28 @@ export default function Experience()
 
         <mesh position-y={ - 1 } rotation-x={ - Math.PI * 0.5 } scale={ 10 }>
             <planeGeometry />
-            <meshStandardMaterial color="greenyellow" />
+            {/* <meshStandardMaterial color="greenyellow" /> */}
+            <MeshReflectorMaterial
+                resolution={512}
+                blur={[1000,1000]} 
+                mixBlur={1} 
+                mirror={0.8}
+                color= "greenyellow"
+            />
         </mesh>
-
-        <Text 
-            font="./bangers-v20-latin-regular.woff"
-            fontSize={0.5}
-            color="salmon"
-            position-y={2}
-            maxWidth={2}
-            textAlign="center"
-        >
-            Test Test Text
-            <meshNormalMaterial />
-        </Text>
+        <Float speed={4} floatIntensity={5}>
+            <Text 
+                font="./bangers-v20-latin-regular.woff"
+                fontSize={0.5}
+                color="salmon"
+                position-y={2}
+                maxWidth={2}
+                textAlign="center"
+            >
+                Test Test Text
+                <meshNormalMaterial />
+            </Text>
+        </Float>
 
     </>
 }

@@ -82,3 +82,14 @@
     Text works like most of the objects in the scene and we can play with its position, rotation and scale.
     We can limit the width to see the line breaks with the "maxWidth" attribute.
     We can center the text using "textAlign" attribute.
+
+## Float
+
+    Float makes the object float like a ballon in the air.
+
+## MeshReflectorMaterial
+
+    "resolution" attribute to set the resolution of the reflection.
+    "blur" attribute to make the reflection blur.
+    "mirror" attribute to make reflection cleaner.
+    "color" attribute to set color of material
