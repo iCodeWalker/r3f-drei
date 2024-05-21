@@ -1,9 +1,10 @@
 import { useRef } from "react"
-import { OrbitControls , TransformControls, PivotControls} from "@react-three/drei"
+import { Html, OrbitControls , TransformControls, PivotControls} from "@react-three/drei"
 
 export default function Experience()
 {
     const cube = useRef();
+    const sphere = useRef();
 
     return <>
         <OrbitControls enableDamping={false} makeDefault/>
@@ -16,9 +17,19 @@ export default function Experience()
             axisColors={["#9381ff", "#ff4d6d", "#7ae532"]}
             scale={2}    
         >
-            <mesh position-x={ - 2 }>
+            <mesh  ref={sphere} position-x={ - 2 }>
                 <sphereGeometry />
                 <meshStandardMaterial color="orange" />
+                {/* Html inside a mesh, that has a sphere */}
+                {/* The text is sticked to the sphere */}
+                <Html 
+                    position={[1,1,0]} 
+                    wrapperClass="label" 
+                    center 
+                    distanceFactor={5} 
+                    occlude={[sphere, cube]}>
+                    This is sphere
+                </Html>
             </mesh>
         </PivotControls>
         {/* solution 1
@@ -41,6 +52,7 @@ export default function Experience()
             <planeGeometry />
             <meshStandardMaterial color="greenyellow" />
         </mesh>
+
 
     </>
 }
