@@ -1,5 +1,5 @@
 import { useRef } from "react"
-import { Html, OrbitControls , TransformControls, PivotControls} from "@react-three/drei"
+import {Text, Html, OrbitControls , TransformControls, PivotControls} from "@react-three/drei"
 
 export default function Experience()
 {
@@ -53,6 +53,17 @@ export default function Experience()
             <meshStandardMaterial color="greenyellow" />
         </mesh>
 
+        <Text 
+            font="./bangers-v20-latin-regular.woff"
+            fontSize={0.5}
+            color="salmon"
+            position-y={2}
+            maxWidth={2}
+            textAlign="center"
+        >
+            Test Test Text
+            <meshNormalMaterial />
+        </Text>
 
     </>
 }

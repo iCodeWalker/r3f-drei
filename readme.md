@@ -65,3 +65,20 @@
 
     We can hide the Html when objects are infront of it with the "occlude" attribute. To use occlude, we first need to have a reference of all the objects that can occlude the "label". By default it will be visible if any object.
     Provide array of the references to the "occlude" attribute.
+
+## Text
+
+    Generating 3d text geometry is quite complex and has limitation
+    1. We can notice the polygons that makes the text 3d.
+    2. Takes a lot of CPU resources.
+    3. Some fonts does not look good.
+    4. Dosen't support line breaks.
+    5. A good alternative is to use SDF fonts.
+    6. SDF stands for Signed Distance Field and is usually used in fragment shaders to draw shapes.
+    7. For fonts it is more complex because the shape can't be calculated mathematically.
+
+    Can change the font, using "font" attribute. The default is Roboto.
+    We can provide our own material for the fonts.
+    Text works like most of the objects in the scene and we can play with its position, rotation and scale.
+    We can limit the width to see the line breaks with the "maxWidth" attribute.
+    We can center the text using "textAlign" attribute.
