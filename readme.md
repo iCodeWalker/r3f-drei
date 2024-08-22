@@ -81,19 +81,25 @@
     4. Dosen't support line breaks.
     5. A good alternative is to use SDF fonts.
     6. SDF stands for Signed Distance Field and is usually used in fragment shaders to draw shapes.
+
+        we send 2d or 3d points to an SDF function and this function will return how far the point is from the shape.
+        There are n number of shapes as long as they can be expressed mathematically.
+
     7. For fonts it is more complex because the shape can't be calculated mathematically.
 
-    Can change the font, using "font" attribute. The default is Roboto.
-    We can provide our own material for the fonts.
-    Text works like most of the objects in the scene and we can play with its position, rotation and scale.
-    We can limit the width to see the line breaks with the "maxWidth" attribute.
-    We can center the text using "textAlign" attribute.
+        Can change the font, using "font" attribute. The default is Roboto.
+        We can provide our own material for the fonts.
+        Text works like most of the objects in the scene and we can play with its position, rotation and scale.
+        We can limit the width to see the line breaks with the "maxWidth" attribute.
+        We can center the text using "textAlign" attribute.
 
 ## Float
 
     Float makes the object float like a ballon in the air.
 
 ## MeshReflectorMaterial
+
+    It will not work on non planner mesh. ex sphere
 
     "resolution" attribute to set the resolution of the reflection.
     "blur" attribute to make the reflection blur.
